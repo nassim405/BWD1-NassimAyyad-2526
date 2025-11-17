@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulier Nassim</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Verplichte informatie</legend>
+            <div>
+                <label for="login">login: *</label>
+                <input type="text" id="login" autofocus required>
+            </div>
+            <div>
+                <label for="password">paswoord: *</label>
+                <input type="password" id="password" required placeholder="minstens 8 karakters">
+            </div>
+            <div>
+                <label for="email">email: *</label>
+                <input type="email" id="email" required>
+            </div>
+            <div>
+                <label for="birthdate">geboortedatum: *</label>
+                <input type="date" id="birthdate">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Optionele dingentjes</legend>
+            <div>
+                <label for="profilepic">profielfoto: *</label>
+                <input type="file" id="profilepic"> 
+            </div>
+            <div>
+                <label for="mobile">GSM: *</label>
+                <input type="tel" id="mobile">
+            </div>
+            <div>
+                <label for="webpage">webpagina: *</label>
+                <input type="url" id="webpage">
+            </div>
+            <div>
+                <label for="favcol">favoriete: *</label>
+                <input type="color" id="favcol" value="#f789df">
+            </div>
+            <div>
+                <label for="kids">Aantal kinderen: *</label>
+                <input type="number" id="kids" value="0">
+            </div>
+            <div>
+                <label for="happiness"></label>
+            </div>
+            <div>
+                <input type="button" value="ok">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

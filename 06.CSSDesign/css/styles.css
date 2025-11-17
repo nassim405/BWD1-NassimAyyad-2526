@@ -1,0 +1,307 @@
+/**
+ *
+ * Common styles
+ *
+ * @author Gemini
+ *
+ */
+
+/* Kleuren:
+ * Rood: #B52025
+ * Grijze achtergrond: #dfdfdf
+ * Roze: #FDEAEB
+ */
+
+/* ===========================================
+   General
+   =========================================== */
+
+/* html, body and general element styles here */
+html {
+    /* Pagina: grijze achtergrondkleur */
+    background-color: #dfdfdf;
+}
+
+body {
+    /* lettertype: Roboto, standaard 13px, 1.8 regelhoogte */
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    background-color: white; /* De body zelf is wit */
+    /* Uitbreiding: afgeronde hoeken linksboven en rechtsboven */
+    border-radius: 10px 10px 0 0;
+    
+    /* NIEUW: Centrale layout. Zet max breedte en centreer de container */
+    max-width: 980px;
+    margin: 0 auto;
+    /* Voeg algemene vulling toe binnen de witte container */
+    padding: 20px 20px 0 20px; /* Boven/links/rechts 20px, onder 0px */
+    /* Lichte schaduw rond de container */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Links in de content: verberg de lijntjes eronder; toon lijntjes weer bij hover */
+#content a {
+    text-decoration: none;
+}
+
+#content a:hover {
+    text-decoration: underline;
+}
+
+/* Titels: opmaak */
+main h3 {
+    color: #B52025; /* Rode kleur */
+    font-size: 1.8em; /* Groter maken */
+    font-weight: 700; /* Zwaarder font (geïmporteerd) */
+    position: relative; /* Nodig voor ::after pseudo-element */
+    /* Pijltjes toevoegen */
+    padding-right: 25px; /* Ruimte voor het pijltje */
+}
+
+/* Uitbreiding: Titels: pijltjes toevoegen (::after) */
+main h3::after {
+    /* Gebruik een driehoek of pijl-achtig unicode-teken */
+    content: '»'; /* Unicode voor een dubbele pijl naar rechts */
+    color: #B52025;
+    font-size: 1.2em;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Tekst in de content: in de breedte uitgerokken ("justify") */
+#content p {
+    text-align: justify;
+}
+
+/* Afbeeldingen links: rand errond */
+#content .minibanner {
+    /* Rand rond de afbeelding */
+    border: 1px solid #dfdfdf;
+    /* NIEUW: Maak de afbeelding 100% breed in zijn sectie */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* ===========================================
+   Header
+   =========================================== */
+
+/* NIEUW: Header layout (Logo links, Menu rechts) */
+header {
+    display: flex;
+    justify-content: space-between; /* Verdeel logo en nav over de breedte */
+    align-items: center; /* Verticaal centreren */
+    margin-bottom: 20px; /* Ruimte onder de header */
+    padding: 0; /* Padding is al op de body */
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* menu opmaak */
+header nav ul {
+    list-style: none;
+    display: flex; /* Horizontaal menu */
+    margin: 0; /* Verwijder standaard margin */
+    padding: 0; /* Verwijder standaard padding */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    display: block; /* Maakt het hover-gebied groter */
+    padding: 10px 15px;
+    color: #333;
+    font-weight: 700;
+    /* Transitie voor hover effect */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* menu hover effect */
+header nav ul li a:hover,
+header nav ul li .active {
+    background-color: #B52025;
+    color: white;
+}
+
+
+/* ===========================================
+   Banner
+   =========================================== */
+
+/* banner stijlen hier */
+#banner {
+    /* Banner: achtergrondafbeelding en rode rand */
+    border: 5px solid #B52025; /* Rode rand */
+    /* De afbeelding moet zich in img/banner.jpg bevinden. Dit is een placeholder. */
+    background: url('img/banner.jpg') no-repeat center center / cover;
+    /* Uitbreiding: schaduw errond */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* NIEUW: hoogte, centrering van de tekst */
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px; /* Ruimte onder de banner */
+}
+
+#banner p {
+    /* Banner: tekstkleur */
+    color: white;
+    /* Tekst in de banner: achtergrondkleur van de tekst in de banner (tip: transparantie) */
+    background-color: rgba(181, 32, 37, 0.8); /* #B52025 met 80% transparantie */
+    font-size: 1.5em; /* Maak de tekst in de banner iets groter */
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+/* ===========================================
+   Main
+   =========================================== */
+
+/* NIEUW: Main layout (Content links, Aside rechts) */
+main {
+    display: flex;
+    gap: 20px; /* Ruimte tussen content en sidebar */
+    padding: 20px 0; /* Ruimte boven en onder de main content */
+}
+
+/* Content gebied voor de 3 secties */
+#content {
+    flex: 3; /* Ongeveer 75% breedte */
+    /* NIEUW: Maak #content een flex container voor zijn 3 secties */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+/* Stijlen voor de drie hoofdsecties */
+#content section {
+    flex: 1 1 30%; /* Drie kolommen, ongeveer 30% elk */
+    padding-bottom: 20px;
+}
+
+/* Sidebar */
+aside {
+    flex: 1; /* Ongeveer 25% breedte */
+    min-width: 200px;
+}
+
+/* more knoppen: opmaak */
+.more a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #B52025; /* Rode achtergrond */
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 3px;
+    /* Transitie voor hover effect */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* more knoppen hover effect */
+.more a:hover {
+    background-color: #991a1f; /* Iets donkerder rood bij hover */
+    /* Lichte schaduw om het "ingedrukt" effect na te bootsen */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+
+/* aside projects: afbeeldingen horizontaal */
+aside .projects p {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+aside .projects img {
+    width: 31%; /* Ongeveer 3 afbeeldingen met kleine gaten */
+    height: auto;
+    border: 1px solid #dfdfdf; /* Overeenkomen met minibanner stijl */
+    /* Maak afbeeldingen licht afgerond */
+    border-radius: 3px;
+}
+
+/* aside newsletter formulier rechts: opmaak */
+aside .newsletter {
+    background-color: #FDEAEB; /* Roze achtergrond */
+    padding: 15px;
+    border-radius: 5px;
+}
+
+aside .newsletter form {
+    display: flex;
+    flex-direction: column;
+}
+
+aside .newsletter h3 {
+    margin-bottom: 5px;
+}
+
+aside .newsletter p {
+    margin-bottom: 15px;
+}
+
+aside .newsletter label {
+    display: none; /* Label verbergen, placeholder is al aanwezig */
+}
+
+/* maak het tekstvak en de knop op rechts onder 'Newsletter' */
+aside .newsletter input[type=text] {
+    /* achtergrondkleur input: #FDEAEB */
+    background-color: white; /* Wit op de roze achtergrond */
+    border: 1px solid #E2C7C8;
+    margin-bottom: 10px;
+    padding: 8px; /* Voeg wat vulling toe aan het invoerveld */
+    border-radius: 3px;
+}
+
+aside .newsletter button[type=submit] {
+    background-color: #B52025; /* Rode knop */
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    /* Transitie voor hover effect */
+    transition: background-color 0.3s;
+    padding: 10px; /* Voeg wat vulling toe aan de knop */
+    border-radius: 3px;
+}
+
+aside .newsletter button[type=submit]:hover {
+    background-color: #991a1f; /* Iets donkerder rood bij hover */
+}
+
+
+/* ===========================================
+   Footer
+   =========================================== */
+
+/* footer: tekst centreren */
+footer {
+    text-align: center;
+    color: white;
+    /* footer: gespikkelde rand erboven */
+    border-top: 1px dashed #B52025;
+    /* Uitbreiding: gradiënt */
+    background: linear-gradient(to right, #B52025, #991a1f);
+    padding: 15px 0; /* Verticale vulling */
+    /* NIEUW: Negatieve margins om de footer de volledige breedte van de body te geven, over de padding heen */
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+}
