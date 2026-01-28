@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Studieplek reserveren</h1>
+        <p>Wil je een studieplek reserveren in De Leeshoek? Vul het formulier hieronder in en we bevestigen je aanvraag
+            via e-mail.</p>
+        <form>
+            <fieldset>
+                <legend>jouw gegevens</legend>
+                <div>
+                    <label for="name">Naam *</label>
+                    <input type="text" id="name" placeholder="Voornaam Achternaam">
+                </div>
+                <div>
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" placeholder="naam@voorbeeld.be">
+                </div>
+                <div>
+                    <label for="datum">Datum *</label>
+                    <input type="date" id="datum">
+                </div>
+
+
+                <div>
+                    <button type="submit">Verzenden</button>
+                    <button type="reset">Wissen</button>
+                </div>
+                <div>
+                    <label for="bio">Opmerkingen *</label>
+                    <textarea id="bio" cols="40" rows="5"></textarea>
+                </div>
+                <div>
+                    <label><input type="checkbox">Ik ga akkoord met de afspraken</label>
+                </div>
+            </fieldset>
+        </form>
+        <h2>Vind ons</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5038.451473368609!2d4.354521476428311!3d50.84550397167039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c47fcc1d13b5%3A0x40b1a1704a249cfa!2sBrussel-Centraal!5e0!3m2!1snl!2sbe!4v1769613211323!5m2!1snl!2sbe"
+            width="600" height="450" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </main>
+    <footer>
+        <address>
+            <span class="material-symbols-outlined">email</span> info@leeshoek.tld <br>
+            <span class="material-symbols-outlined">phone_in_talk</span> 0123/40.00.00
+        </address>
+        <p>&copy; Stadsbibliotheek De Leeshoek — Alle rechten voorbehouden </p>
+    </footer>
+</body>
+
+</html>
